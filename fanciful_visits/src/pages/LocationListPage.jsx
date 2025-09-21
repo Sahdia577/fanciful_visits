@@ -72,9 +72,11 @@ export const LocationListPage = ({ handleClick }) => {
     return (
         <>   
             <Flex
-                justifyContent={'space-between'}
+                flexDir={{ base: 'column', lg: 'row'}}
+                justifyContent='space-between'
                 bgColor={'cyan.950'}
                 p={10}
+                gap={{ base: '3' }}
             >
                 <NavButton
                     onClick={()=>goHome()}
@@ -82,7 +84,7 @@ export const LocationListPage = ({ handleClick }) => {
                     Home
                 </NavButton>
                 <Input
-                    w={'50%'} 
+                    w={{ base: '100%',lg:'50%'}}
                     color={'cyan.900'}
                     bgColor={'gray.400'}
                     fontSize={18}
@@ -94,7 +96,8 @@ export const LocationListPage = ({ handleClick }) => {
                     matchedLocation={matchedLocation}
                 />
                 <NavButton
-                    onClick={()=>goToBookTrip()}
+                    onClick={() => goToBookTrip()}
+                    alignSelf={{ base:'flex-end'}}
                 >
                     Book a trip
                 </NavButton>

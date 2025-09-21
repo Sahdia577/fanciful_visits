@@ -6,6 +6,7 @@ import {
     Heading,
     Flex,
     Box,
+    useBreakpointValue
  } from '@chakra-ui/react'; 
 
 export const TravelFaq = () => {
@@ -31,8 +32,9 @@ export const TravelFaq = () => {
                 overflow='hidden'
             >
                 <Flex
-                    w={'70%'}
-                    justifyContent={'space-between'}
+                    w={{ base: '100%', lg: '70%' }}
+                    justifyContent={{ base: 'space-evenly', lg: 'space-between' }}
+                    mt={8}
                 >
                     <NavButton
                         onClick={()=>goBack()}
@@ -46,17 +48,17 @@ export const TravelFaq = () => {
                     </NavButton>
                 </Flex>
                 <Heading
-                    fontWeight={800}
-                    fontSize={30}
+                    fontWeight={{ base: 700, lg: 800 }}
+                    fontSize= {useBreakpointValue({ base: 'md', lg: '3xl' })}
                     my={10}
                 >
                     How do I book a Fanciful Visit?
                 </Heading>
                 <Flex
                     fontWeight={300}
-                    fontSize={20}
+                    fontSize= {useBreakpointValue({ base: 'md', lg: 'xl'})}
                     lineHeight={1.5}
-                    maxW='65ch'
+                    maxW={{ base: '45ch', lg: '65ch' }}
                     textAlign='center'
                     gap={4}
                     flexWrap={'wrap'}
@@ -65,19 +67,21 @@ export const TravelFaq = () => {
                         Browse through our locations and read their descriptions carefully.
                         You can only book a trip to one location at a time.
                     </Text>
-                                     <Flex>
-                        <Text
-                            w='30ch'
-                        >
+                    <Flex
+                        w='100%'
+                        gap={2}
+                        justifyContent={'center'}
+                    >
+                        <Text>
                             After choosing a location, call us at:
                         </Text>
                         <Text
-                             color={'cyan.500'}
+                            color={'cyan.500'}
+                            textWrap='nowrap'
                         >
                             73 273 875 223
                         </Text>
-                        <Text>, it is free of any charges.</Text>
-                    </Flex>
+                     </Flex>                 
                     <Text>
                         Before making a reservation, we do a mandatory background check.
                         You can't book a trip without this background check. 
@@ -97,7 +101,7 @@ export const TravelFaq = () => {
                     fontWeight={500}
                     textAlign='center'
                     color={'gray.300'}
-                    mt={10}
+                    my={{ base: '3', lg: '10'}}
                 >
                     <Text>©Fanciful Visits</Text>
                 </Box>

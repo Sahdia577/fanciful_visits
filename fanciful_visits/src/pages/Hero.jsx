@@ -36,7 +36,7 @@ export const Hero = () => {
                     px={useBreakpointValue({ base: 4, md: 8 })}
                     bgGradient={'linear(to-r, blackAlpha.600, transparent)'}>
                     <Stack
-                        maxW={'2xl'}
+                        maxW= {{ base: "xs", lg: '2xl'}}
                         align={'flex-start'}
                         spacing={6}
                     >
@@ -44,7 +44,7 @@ export const Hero = () => {
                             color={'gray.200'}
                             fontWeight={700}
                             lineHeight={1.2}
-                            fontSize={useBreakpointValue({ base: '3xl', md: '4xl' })}
+                            fontSize={useBreakpointValue({ base: 'md', md: '3xl' })}
                         >
                             Fanciful Visits
                         </Text>
@@ -52,14 +52,14 @@ export const Hero = () => {
                             color={'gray.200'}
                             fontWeight={400}
                             lineHeight={1.2}
-                            fontSize={useBreakpointValue({ base: 'xl', md: '2xl' })}
+                            fontSize={useBreakpointValue({ base: 'sm', md: '2xl' })}
                         >
                             Go to locations you won't find in your travel agency. Spend time in a place 
                             which makes you wonder how something like this can exist. You don't have to
                             sleep to have a dream holiday. Visit a Fanciful Location.                            
                         </Text>
                         <Stack
-                            direction={'row'}
+                            direction= {{ base: 'column', lg: 'row'}}
                             gap={5}
                             mt={5}
                         >
@@ -67,6 +67,8 @@ export const Hero = () => {
                             bg={'cyan.600'}
                             rounded={'full'}
                             color={'gray.100'}
+                            fontSize={useBreakpointValue({ base: 'xs', md: 'md' })}
+                            w={{ base: '3xs', lg: 'xs' }}
                             _hover={{ bg: 'cyan.700' }}
                             onClick={() => goToTravelFaq()}  
                             >
@@ -76,6 +78,8 @@ export const Hero = () => {
                             bg={'whiteAlpha.300'}
                             rounded={'full'}
                             color={'gray.100'}
+                            fontSize={useBreakpointValue({ base: 'xs', md: 'md' })}
+                            w={{ base: '3xs', lg: 'xs' }}
                             _hover={{ bg: 'whiteAlpha.500' }}
                             onClick={() => goToLocations()}
                             >
@@ -85,8 +89,7 @@ export const Hero = () => {
                         <Stack
                             color={'gray.200'}
                             mt={10}
-                            fontWeight={800}
-
+                            fontWeight={{ base: "medium", lg: "bold"}}
                         >
                             <Text>©Fanciful Visits</Text>
                         </Stack>

@@ -5,7 +5,8 @@ import {
     Image,
     Text,
     Flex,
-    Box
+    Box,
+    useBreakpointValue
  } from '@chakra-ui/react'; 
  
 
@@ -21,15 +22,15 @@ export const LocationPage = ({ location, handleClick }) => {
                 <Card.Root
                     color={'cyan.900'}
                     bgColor={'gray.400'}
-                    flexDirection='row'
+                    flexDirection={{lg: 'row' }}
                     overflow='hidden'
-                    w='80%'
-                    h='30rem'
+                    w={{ lg: '80%' }}
+                    h={{ lg: '30rem' }}
                     mt={20}
                 >
                     <Image
                         src={location.img}
-                        w='50%'
+                        w={{ lg: '50%' }}
                         borderRadius={5}
                         objectFit='cover'
                         mx={0}
@@ -38,15 +39,15 @@ export const LocationPage = ({ location, handleClick }) => {
                         <Card.Body gap={3}>
                             <Card.Title
                                 textAlign={'center'}
-                                fontSize={35}
-                                fontWeight={800}
+                                fontSize= {useBreakpointValue({ base: 'xl', lg: '3xl' })}
+                                fontWeight={800} 
                                 mb={5}
                             >
                                 {location.name}
                             </Card.Title>
                             <Card.Description
                                 color='cyan.900'
-                                fontSize={15}
+                                fontSize= {useBreakpointValue({ base: 'md', lg: 'xl' })}
                                 fontWeight={600}
                             >
                                 <Text
@@ -61,26 +62,27 @@ export const LocationPage = ({ location, handleClick }) => {
                                     flexDir={'column'}
                                     mt={10}
                                     fontWeight={500}
+                                    fontSize={useBreakpointValue({ base: 'md', lg: 'l' })}
                                 >
-                                    <Flex gap={3}>
+                                    <Flex gap={3} flexDir={{ base: 'column', lg:'row' }}>
                                         <Badge>Vegetation:</Badge>
                                         <Text>
                                             {location.vegetation}
                                         </Text>
                                     </Flex>
-                                    <Flex gap={3}>
+                                    <Flex gap={3} flexDir={{ base: 'column', lg:'row' }}>
                                         <Badge>Animals:</Badge>
                                         <Text>
                                             {location.animals}
                                         </Text>
                                     </Flex>
-                                    <Flex gap={3}>
+                                    <Flex gap={3} flexDir={{ base: 'column', lg:'row' }}>
                                         <Badge>Temperature in Celsius:</Badge>
                                         <Text>
                                             {location.temperature}
                                         </Text>
                                     </Flex>
-                                    <Flex gap={3}>
+                                    <Flex gap={3} flexDir={{ base: 'column', lg:'row' }}>
                                         <Badge>Number of inhabitants:</Badge>
                                         <Text>
                                             {location.inhabitants}
