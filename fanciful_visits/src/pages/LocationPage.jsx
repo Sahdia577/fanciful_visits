@@ -17,15 +17,15 @@ export const LocationPage = ({ location, handleClick }) => {
                 justify='center'
                 bgColor={'cyan.800'}
                 p={10}
-                h='1000px'             
+                h={{ base: '1300px', lg: '1000px' }}          
             >
                 <Card.Root
                     color={'cyan.900'}
                     bgColor={'gray.400'}
                     flexDirection={{lg: 'row' }}
                     overflow='hidden'
-                    w={{ lg: '80%' }}
-                    h={{ lg: '30rem' }}
+                    w={{ base: '100%', lg:'80%' }}
+                    h={{ base: '60rem', lg: '30rem' }}
                     mt={20}
                 >
                     <Image
