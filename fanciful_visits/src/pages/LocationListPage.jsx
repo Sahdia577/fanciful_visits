@@ -77,6 +77,7 @@ export const LocationListPage = ({ handleClick }) => {
                 bgColor={'cyan.950'}
                 p={10}
                 gap={{ base: '3' }}
+                
             >
                 <NavButton
                     onClick={()=>goHome()}
@@ -129,6 +130,7 @@ export const LocationListPage = ({ handleClick }) => {
                 textAlign='center'
                 color={'gray.300'}
                 p={2}
+                h='16rem'
             >
                 <Text>©Fanciful Visits</Text>
             </Box>
