@@ -25,7 +25,7 @@ export const LocationPage = ({ location, handleClick }) => {
                     flexDirection={{lg: 'row' }}
                     overflow='hidden'
                     w={{ base: '100%', lg:'80%' }}
-                    h={{ base: '60rem', lg: '30rem' }}
+                    h={{ base: '60rem', lg: '34rem' }}
                     mt={20}
                 >
                     <Image
